@@ -2,10 +2,7 @@ var http = require('http');
 var ecstatic = require('ecstatic')(__dirname + '/static');
 
 var level = require('level');
-var db = level('app.db', {
-    keyEncoding: require('bytewise'),
-    valueEncoding: 'json'
-});
+var db = level('app.db', { valueEncoding: 'json' });
 
 var router = require('./router.js')(db);
 

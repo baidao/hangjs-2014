@@ -9,10 +9,7 @@ module.exports = function (db) {
     var r = routes();
     r.addRoute('/', function (req, res, params) {
         var tr = trumpet();
-        var msgs = db.createReadStream({
-            start: [ 'msg' ],
-            end: [ 'msg', undefined ]
-        });
+        var msgs = db.createReadStream({ start: 'msg!', end: 'msg!\uffff' });
         msgs.pipe(render.msg()).pipe(tr.createWriteStream('#messages'));
         readStream('index.html').pipe(tr).pipe(res);
     });

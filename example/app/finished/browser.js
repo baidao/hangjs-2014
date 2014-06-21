@@ -5,7 +5,7 @@ window.db = db;
 
 var render = require('./render/msg.js');
 
-var feed = db.livefeed({ start: [ 'msg' ], end: [ 'msg', undefined ] });
+var feed = db.livefeed({ start: 'msg!', end: 'msg!\uffff' });
 feed.pipe(render().sortTo('#messages', cmp));
 
 function cmp (a, b) {
