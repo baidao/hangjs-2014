@@ -1,0 +1,8 @@
+{
+  "name": "hangjs-feed-demo",
+  "scripts": {
+    "build": "browserify browser.js -t brfs -o static/bundle.js",
+    "watch": "watchify browser.js -t brfs -o static/bundle.js -dv",
+    "start": "node server.js"
+  }
+}
