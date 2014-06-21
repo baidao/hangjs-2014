@@ -3,10 +3,10 @@ var a = through.obj(function (x, e, next) { this.push(x+1); next() });
 var b = through.obj(function (x, e, next) { this.push(x/3); next() });
 var c = through.obj(function (x, e, next) { this.push(x*100); next() });
 
-var splicer = require('stream-splicer');
-var p = splicer.obj([ a, b, c ]);
+var splicer = require('labeled-stream-splicer');
+var p = splicer.obj([ 'A', [a], 'B', [b], 'C', [c] ]);
 
-// p.splice(1,2, through.obj(function (x,e,next) { this.push(x*111); next() }));
+// p.get('B').push(through.obj(function (x,e,next) { this.push(x*5); next() }));
 
 p.on('data', console.log);
 p.write(5);
