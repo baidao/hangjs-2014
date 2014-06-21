@@ -1,2 +1,2 @@
 #!/bin/bash
-vi `ls -1 *.{js,html}`
+vi `ls -1 *.{js,html,json}`
