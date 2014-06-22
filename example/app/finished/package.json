@@ -4,5 +4,17 @@
     "build": "browserify browser.js -t brfs -o static/bundle.js",
     "watch": "watchify browser.js -t brfs -o static/bundle.js -dv",
     "start": "node server.js"
+  },
+  "dependencies": {
+    "level": "~0.18.0",
+    "multilevel-feed": "~0.0.0",
+    "routes": "^1.1.0",
+    "trumpet": "^1.6.4",
+    "ecstatic": "~0.5.3",
+    "shoe": "~0.0.15",
+    "hyperspace": "^1.0.0"
+  },
+  "devDependencies": {
+    "brfs": "^1.1.1"
   }
 }
